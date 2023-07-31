@@ -1,0 +1,149 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+:root{
+    --clr-violet:hsl(257, 40%, 49%);
+    --clr-soft_magenta:hsl(300, 69%, 71%);
+    --ff-poppins:"Poppins";
+    --f-open_sans:"Open Sans";
+    --fw-heavy:600;
+}
+body{
+    display:grid;
+    place-content: center;
+    background-image: url(images/bg-mobile.svg);
+    background-repeat:no-repeat;
+    background-color: var(--clr-violet);
+    background-size: contain;
+}
+.container{
+    margin-top:5em;
+    max-width:20em;
+    display:grid;
+    gap:1em;
+    padding:1em;
+    text-align: center;
+}
+.logo img{
+    width:150px;
+    display:flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    margin-bottom:3.5em;
+}
+.title{
+    color:white;
+    font-family: var(--ff-poppins);
+    font-weight: var(--fw-heavy);
+    font-size: 1.5em;;
+}
+.description{
+    color:white;
+    font-family: var(--f-open_sans);
+    font-size: 0.95em;
+
+}
+.button{
+    border-style: none;
+    border-radius: 1.5em;
+    padding:0.7em;
+    color:var(--clr-violet);
+    font-family: var(--ff-poppins);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top:1em;
+    width:100%;
+}
+.social{
+    margin-top: 5em;
+    display:flex;
+    justify-content: center;
+    gap:1em;
+}
+.social a{
+    width:35px;
+    color:white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding:0.5em;
+}
+@media only screen and (min-width:50em){
+    body{
+        background-image: url(images/bg-desktop.svg);
+        background-size: cover;
+    }
+    .container{
+        max-width:65em;
+        margin:2em;
+    }
+    .grid_group{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+    .text{
+        margin-left:3em;
+    }
+    .title{
+        font-size:2em;
+        margin-top:1em;
+    }
+    .description{
+        margin-top: 1em;
+    }
+    .button{
+        width:40%;
+    }
+    .social{
+        display:flex;
+        justify-content: flex-end;
+        text-align: center;
+    }
+
+    
+    
+    
+}
